@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OwodaApp.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<section id="makePayment">
+    <div class="container">
+           <p>
+            <a asp-action="Create">Make Payment</a>
+        </p>
+        <p>
+            <a asp-action="SearchShowFrom">Search For a Payment</a>
+        </p><br />
+        <p>
+            <a asp-action="ShowAllMembers">List All Payments</a>
+        </p><br />
+       @* <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Member)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Vehicle)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PaymentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PaymentDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Member.MemberId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vehicle.VehicleId)
+                        </td>
+                        <td>
+                          
+                            <a asp-action="Details" asp-route-id="@item.PaymentId">Details</a> |
+                          
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
+
+    </div>
+</section><!-- End Hero -->

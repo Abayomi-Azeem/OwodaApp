@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "SearchShowFrom";
+}
+
+
+
+
+<section id="memberReg">
+    <div class="container">
+        <h1>Search for a Member</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="SearchResult">
+                    <div class="form-group">
+                        <label for="SearchPhrase" class="control-label">Search By First Name</label>
+                        <input name="SearchPhrase" class="form-control" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Search" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</section><!-- End Hero -->
+

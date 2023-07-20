@@ -1,0 +1,98 @@
+﻿@model IEnumerable<OwodaApp.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "List Payments";
+}
+
+
+
+
+<section id="memberReg">
+  
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <p>
+                    <a asp-action="Create">Make a Payment</a>
+                </p><br />
+                <p>
+                    <a asp-action="SearchShowFrom">Search For a Payment</a>
+                </p><br />
+               <br />
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VehicleId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VehicleType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VehicleMake)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VehicleModel)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VehicleColor)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsPapersComplete)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Member)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VehicleId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VehicleType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VehicleMake)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VehicleModel)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VehicleColor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsPapersComplete)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Member.MemberId)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.VehicleId">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.VehicleId">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.VehicleId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+﻿@model OwodaApp.Models.Payment
+
+@{
+    ViewData["Title"] = "Make Payment";
+}
+
+
+
+<h1>Make Payment</h1>
+
+<hr />
+
+
+    <section id="makePayment">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="MemberId" class="control-label"></label>
+                        @{
+                            if (ViewBag.MId != null)
+                            {
+                                <input class="form-control" value="@ViewBag.MId" readonly="true" name="MemberId" />
+                            }
+                            else{<select asp-for="MemberId" class="form-control" asp-items="ViewBag.MemberId" ></select>}
+                          }
+                        
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="VehicleId" class="control-label"></label>
+                        @{
+                            if (ViewBag.VId != null)
+                            {
+                                <input class="form-control" value="@ViewBag.VId" readonly="true" name="VehicleId" />
+                            }
+                            else{<select asp-for="VehicleId" class="form-control" asp-items="ViewBag.VehicleId"></select>}
+                        }
+                        
+                        <p> @ViewBag.InvalidId</p>
+                    </div> 
+                    <div class="form-group">
+                        <label for="NoOfTrips" class="control-label">Number Of Trips</label>
+                        <input name="NoOfTrips" class="form-control"/>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                       
+                        <label asp-for="Amount" class="control-label"></label>
+                        <input value="@ViewBag.Amount" readonly="true" class="form-control" name="Amount" /> <p><input type="submit" value="Calculate Amount" class="btn btn-primary" /></p>
+                       @* <input asp-for="Amount" class="form-control" />   *@                     
+                        @*<span asp-validation-for="Amount" class="text-danger"></span>*@
+                    </div>
+                    
+
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+        </div>
+    </section><!-- End Hero -->
